@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+    <h1>Chai Aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        // setInterval(function(){
+        //     console.log("Himansu", Date.now());
+        // }, 1000)
+
+        // const sayDate = function() {
+        //     console.log("Himansu", Date.now())
+        // }
+
+        // or 
+
+        const sayDate = function(str) {
+            console.log(str, Date.now());
+        }
+
+        // or reference pass kar dijiye
+
+        // setInterval(sayDate, 1000)
+        // setInterval(sayDate, 1000, "Hii")
+
+        const intervalId = setInterval(sayDate, 1000, "Hii")
+
+    </script>
+</body>
+</html>

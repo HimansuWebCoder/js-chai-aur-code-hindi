@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>html Events</title>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+		}
+		img {
+			width: 200px;
+			heigth:200px;
+		}
+	</style>
+</head>
+<body>
+   <h2>Amazing Image</h2>
+   <div>
+   	  <ul id="images">
+   	  	 <li><img src="https://yt3.googleusercontent.com/ytc/AIdro_k8WWdesIQosU5WUlHsVDJ4a6lo8tRCGvyOfWKkC0qbG8o=s900-c-k-c0x00ffffff-no-rj" id="photoshop"></li>
+
+   	  	 <li><img src="https://cdn.britannica.com/63/59363-050-F082087B/Garden-Kinkaku-Temple-shelter-structure-use-landscape.jpg" id="japan"></li>
+
+   	  	 <li><img src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/11/Rivers-of-the-World-Cover.jpg" id="river"></li> 
+
+   	  	 <li><img src="https://cdn.britannica.com/29/181429-050-A2AFC966/Burrowing-owl.jpg" id="owl"></li>
+
+   	  	  <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNV8kTgKre48ONxTjPoh4h7mUDApY_79ExmQ&s" id="prayer"></li>
+
+   	  	  <li><a style="color: white" href="https://google.com" id="google">Google</a></li>
+   	  </ul>
+   </div>
+
+   <script>
+   	// document.getElementById("owl").onclick = function (){
+   	// 	alert("owl clicked")
+   	// }
+
+   	// attachEvent()
+   	// jQuery - on
+
+    // type, timestamp, preventDefault
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, offset, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode 
+
+   	// document.getElementById("owl").addEventListener("click", function(){
+   	// 	alert("owl clicked again")
+   	// })
+
+    
+    // document.getElementById("owl").addEventListener("click", function(e){
+    // 	console.log(e);
+    // }, false) // by default this is false try true and false
+
+     // document.getElementById("images").addEventListener("click", function(e) {
+     // 	console.log("clicked inside the ul");
+     // }, false)
+
+     // document.getElementById("owl").addEventListener("click", function(e) {
+     // 	console.log("owl clicked");
+     // 	e.stopPropagation()
+     // }, false)
+
+     // document.getElementById("google").addEventListener("click", function(e) {
+     // 	e.preventDefault()
+     // 	e.stopPropagation()
+     // 	console.log("google clicked");
+     // }, false)
+
+   	// document.querySelector("#images").addEventListener("click", function(e) {
+   	// 	// console.log(e.target.parentNode);
+   	// 	console.log(e.target.tagName);
+   	// 	let removeIt = e.target.parentNode
+   	// 	removeIt.remove()
+
+   	// })
+
+   	document.querySelector("#images").addEventListener("click", function(e) {
+   		console.log(e.target.tagName);
+   		if (e.target.tagName === "IMG") {
+   			console.log(e.target.id);
+   			let removeIt = e.target.parentNode
+   			removeIt.remove()
+   		}
+   	})
+
+   		// removeIt.parentNode.removeChild(removeIt)
+   </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chai Aur Code | DOM</title>
+</head>
+<body style="background-color: black; color: white">
+   <ul class="language">
+   	  <li>Javascript</li>
+   </ul>
+</body>
+<script>
+	function addLanguage(langName){
+		const li = document.createElement("li")
+		li.innerHTML = `${langName}`
+		document.querySelector(".language").
+		appendChild(li)
+	}
+
+	addLanguage("python")
+	addLanguage("typescript")
+
+	function addOptimiLanguage(langName) {
+		const li = document.createElement("li");
+		// const addText = document.createTextNode(langName)
+		// li.appendChild(addText)
+		li.appendChild(document.createTextNode(langName)) // directly in one line
+		document.querySelector(".language").appendChild(li)
+	}
+
+    // don't always follow innerHTML 
+    // In large codebase or large company 
+
+	function addOptimiLanguage(langName) {
+		const li = document.createElement("li");
+		li.appendChild(document.createTextNode(langName)) // optimized way
+		document.querySelector(".language").appendChild(li)
+	}
+
+	addOptimiLanguage("golang")
+
+	//Edit
+	const secondLang = document.querySelector("li:nth-child(2)")
+	console.log(secondLang)
+	// secondLang.innerHTML = "Mojo" // don't optimized way
+	const newLi = document.createElement("li")
+	newLi.textContent = "Mojo"
+	secondLang.replaceWith(newLi)
+
+	//edit
+	const firstLang = document.querySelector("li:first-child")
+	firstLang.outerHTML = "<li>Typescript</li>"
+
+	//remove
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+
+    // if you want more practice go to w3school or mdn and play with that
+
+</script>
+</html>

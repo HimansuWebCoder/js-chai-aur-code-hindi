@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+    <script>
+    	const requestUrl = "https://api.github.com/users/hiteshchoudhary"
+    	const xhr = new XMLHttpRequest();
+    	xhr.open("GET", requestUrl)
+    	xhr.onreadystatechange = function(){
+    		console.log(xhr.readyState);
+    		if (xhr.readyState === 4) {
+    			// const data = this.responseText
+    			const data = JSON.parse(this.responseText)
+    			// console.log(data)
+    			// console.log(typeof data) // string 
+    			console.log(typeof data) // object (after parse)
+    			console.log(data.followers);
+    		}
+    	}
+
+    	xhr.send()
+    </script>
+
+    <!-- Assignment from hitesh sir is take their photo and create a card and below like this followers place below create a card -->
+</body>
+</html>
